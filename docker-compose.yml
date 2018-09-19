@@ -7,6 +7,10 @@ services:
         - redis
         ports:
         - "8888:8888"
+        environment:
+        - SERVER_ADDRESS=${STORE_API_ADDRESS}
+        - REDIS_ADDRESS=${STORE_REDIS_ADDRESS}
+        - REDIS_PASSWORD=${STORE_REDIS_PASSWORD}
     redis:
         image: redis:4-alpine
         command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
