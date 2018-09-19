@@ -11,6 +11,20 @@ services:
         - SERVER_ADDRESS=${STORE_API_ADDRESS}
         - REDIS_ADDRESS=${STORE_REDIS_ADDRESS}
         - REDIS_PASSWORD=${STORE_REDIS_PASSWORD}
+    discord:
+        image: shotsfired/shots-discord:latest
+        restart: always
+        ports:
+        - "8889:8889"
+        environment:
+        - SERVER_ADDRESS=${DISCORD_API_ADDRESS}
+    twitch:
+        image: shotsfired/shots-twitch:latest
+        restart: always
+        ports:
+        - "8889:8889"
+        environment:
+        - SERVER_ADDRESS=${TWITCH_API_ADDRESS}
     redis:
         image: redis:4-alpine
         command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
