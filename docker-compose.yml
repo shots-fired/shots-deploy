@@ -18,11 +18,11 @@ services:
         - "8889:8889"
         environment:
         - SERVER_ADDRESS=${DISCORD_API_ADDRESS}
+        - BOT_KEY=${DISCORD_BOT_KEY}
     twitch:
         image: shotsfired/shots-twitch:latest
-        restart: always
         ports:
-        - "8889:8889"
+        - "8887:8887"
         environment:
         - SERVER_ADDRESS=${TWITCH_API_ADDRESS}
     redis:
