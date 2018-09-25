@@ -11,3 +11,4 @@ Several values are kept in environment variables for configuration sake.
 * STORE_REDIS_PASSWORD
 * DISCORD_API_ADDRESS
 * TWITCH_API_ADDRESS
+* SHARED_STORE_ADDRESS

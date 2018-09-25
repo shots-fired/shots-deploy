@@ -19,6 +19,7 @@ services:
         environment:
         - SERVER_ADDRESS=${DISCORD_API_ADDRESS}
         - BOT_KEY=${DISCORD_BOT_KEY}
+        - STORE_ADDRESS=${SHARED_STORE_ADDRESS}
     twitch:
         image: shotsfired/shots-twitch:latest
         ports:
