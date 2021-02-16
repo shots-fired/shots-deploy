@@ -1,36 +1,36 @@
 version: '3'
 services:
-    store:
-        image: shotsfired/shots-store:latest
-        restart: always
-        depends_on:
-        - redis
-        ports:
-        - "8888:8888"
-        environment:
-        - SERVER_ADDRESS=${STORE_API_ADDRESS}
-        - REDIS_ADDRESS=${STORE_REDIS_ADDRESS}
-        - REDIS_PASSWORD=${STORE_REDIS_PASSWORD}
+    # store:
+    #     image: shotsfired/shots-store:latest
+    #     restart: always
+    #     depends_on:
+    #     - redis
+    #     ports:
+    #     - "8888:8888"
+    #     environment:
+    #     - SERVER_ADDRESS=${STORE_API_ADDRESS}
+    #     - REDIS_ADDRESS=${STORE_REDIS_ADDRESS}
+    #     - REDIS_PASSWORD=${STORE_REDIS_PASSWORD}
     discord:
         image: shotsfired/shots-discord:latest
         restart: always
         ports:
         - "8889:8889"
         environment:
-        - SERVER_ADDRESS=${DISCORD_API_ADDRESS}
-        - BOT_KEY=${DISCORD_BOT_KEY}
-        - STORE_ADDRESS=${SHARED_STORE_ADDRESS}
-    twitch:
-        image: shotsfired/shots-twitch:latest
-        ports:
-        - "8887:8887"
-        environment:
-        - SERVER_ADDRESS=${TWITCH_API_ADDRESS}
-    redis:
-        image: redis:4-alpine
-        command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
-        restart: always
-        volumes:
-        - ./redis.conf:/usr/local/etc/redis/redis.conf
-        ports:
-        - "6379:6379"
+        # - SERVER_ADDRESS=${DISCORD_API_ADDRESS}
+        - DISCORD_BOT_TOKEN=${DISCORD_BOT_TOKEN}
+        # - STORE_ADDRESS=${SHARED_STORE_ADDRESS}
+    # twitch:
+    #     image: shotsfired/shots-twitch:latest
+    #     ports:
+    #     - "8887:8887"
+    #     environment:
+    #     - SERVER_ADDRESS=${TWITCH_API_ADDRESS}
+    # redis:
+    #     image: redis:4-alpine
+    #     command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    #     restart: always
+    #     volumes:
+    #     - ./redis.conf:/usr/local/etc/redis/redis.conf
+    #     ports:
+    #     - "6379:6379"

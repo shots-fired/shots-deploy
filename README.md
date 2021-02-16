@@ -12,3 +12,11 @@ Several values are kept in environment variables for configuration sake.
 * DISCORD_API_ADDRESS
 * TWITCH_API_ADDRESS
 * SHARED_STORE_ADDRESS
+
+## Initial Setup
+1. install docker, add run user to the docker group, restart
+2. edit `shots.service` and add .env file with environment variables
+3. `sudo cp shots.service /etc/systemd/system`
+4. `sudo systemctl daemon-reload`
+5. `sudo systemctl start shots`
+6. `sudo systemctl enable shots`
