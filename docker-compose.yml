@@ -19,6 +19,7 @@ services:
         environment:
         # - SERVER_ADDRESS=${DISCORD_API_ADDRESS}
         - DISCORD_BOT_TOKEN=${DISCORD_BOT_TOKEN}
+        - DICTIONARY_API_KEY=${DICTIONARY_API_KEY}
         # - STORE_ADDRESS=${SHARED_STORE_ADDRESS}
     # twitch:
     #     image: shotsfired/shots-twitch:latest

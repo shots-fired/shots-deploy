@@ -1,5 +1,5 @@
 #! /bin/bash
 if [ -f .env ]; then
-  export $(cat .env | xargs)
+  export $(grep -v '^#' .env | xargs)
 fi
 docker-compose up
