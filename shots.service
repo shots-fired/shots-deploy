@@ -5,7 +5,6 @@ After=network.target
 [Service]
 User=shots
 WorkingDirectory=/home/shots/go/src/github.com/shots-fired/shots-deploy
-ExecStartPre=/bin/bash init.sh
 ExecStart=/bin/bash run.sh
 Restart=on-success
 RestartSec=5s
